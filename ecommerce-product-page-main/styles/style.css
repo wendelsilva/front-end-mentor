@@ -1,0 +1,96 @@
+
+/* PRODUCT INFO */
+.product-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .75rem;
+
+    padding: 0 .8rem;
+}
+
+.sneaker-company {
+    font-size: .75em;
+    font-weight: 700;
+    letter-spacing: .2rem;
+    text-transform: uppercase;
+    color: var(--orange);
+
+    align-self: flex-start;
+}
+
+.product-name {
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+.product-description {
+    color: var(--grayish-blue);
+}
+
+
+/* PRODUCT PRICE */
+.product-price {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.product-sale-price {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--black);
+}
+
+.product-price-discount {
+    background-color: var(--pale-orange);
+    padding: .2rem .5rem;
+    color: var(--orange);
+    border-radius: .4rem;
+
+    font-weight: 700;
+
+    margin-left: -7rem;
+}
+
+.product-list-price {
+    font-size: .8em;
+    font-weight: 700;
+
+    text-decoration: line-through;
+
+    color: var(--grayish-blue);
+}
+
+/* PRODUCT ACTIONS */
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: calc(100% - 1.6rem);
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: var(--light-grayish-blue);
+    padding: 1.2rem;
+    border-radius: .6rem;
+    
+    width: 100%;
+}
+
+[type = 'number'] {
+    border: none;
+    background-color: transparent;
+
+    font-weight: 700;
+    font-size: 1em;
+
+    text-align: center;
+}

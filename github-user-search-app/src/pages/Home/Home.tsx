@@ -10,13 +10,15 @@ import './style.css'
 
 export function Home() {
   const [userName, setUserName] = useState('')
+  const [haveData, setHaveData] = useState(false)
   const [userData, setUserData] = useState({})
-
+  
   async function getUser(name: string) {
     try {
       const response = await api.get('https://api.github.com/users/' + name);
       const data = response.data
       setUserData(data);
+      setHaveData(true);
     } catch {
       alert('Error: usuário não encontrado');
     }
@@ -39,8 +41,7 @@ export function Home() {
           Search
         </button>
       </div>
-      <UserCard user={userData} />
-      {/* <UserCard style={userData ? {display: 'none'} : {display: 'flex'}} user={userData}/> */}
+      {haveData ? <UserCard user={userData} /> : '' }
     </div>
   )
 }

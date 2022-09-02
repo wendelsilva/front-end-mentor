@@ -7,6 +7,7 @@
     background-color: var(--primary-dark-color);
     border-radius: .8rem;
     padding: 2rem;
+    width: 100%;
 }
 
 .user-card header {
@@ -75,4 +76,9 @@
     display: flex;
     align-items: center;
     gap: .5rem;
+}
+
+.user-card footer ul li a {
+    color: var(--text-dark-color);
+    cursor: pointer;
 }

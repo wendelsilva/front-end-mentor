@@ -4,17 +4,25 @@ import './style.css'
 import { Buildings, Link, MapPin, TwitterLogo } from 'phosphor-react';
 
 export function UserCard({ user }: UserCardProps) {
+
+    const splitDate = user.created_at.toString().split('T')[0];
+    const day = splitDate.split('-')[2]
+    const month = splitDate.split('-')[1];
+    const year = splitDate.split('-')[0];
+    const dateFormated = day + '/' + month + '/' + year;
+  
+
   return (
     <div className="user-card">
       <header>
         <img src={user.avatar_url} alt="imagem de perfil do github do usuário" />
         <ul>
-          <li className='name'>{user.name}</li>
-          <li className='user'>@{user.login}</li>
-          <li className='started'>Entrou em {user.created_at}</li>
+          <li className="name">{user.name}</li>
+          <li className="user">@{user.login}</li>
+          <li className="started">Joined {dateFormated}</li>
         </ul>
       </header>
-      <p>{user.bio}</p>
+      <p>{user.bio ? user.bio : "this profile has no bio"}</p>
       <table>
         <thead>
           <tr>
@@ -25,18 +33,30 @@ export function UserCard({ user }: UserCardProps) {
         </thead>
         <tbody>
           <tr>
-            <td>8</td>
-            <td>3938</td>
-            <td>9</td>
+            <td>{user.public_repos}</td>
+            <td>{user.followers}</td>
+            <td>{user.following}</td>
           </tr>
         </tbody>
       </table>
       <footer>
         <ul>
-          <li>{user.location ? <><MapPin size={24}/> {user.location}</> : 'not available'}</li>
-          <li>{user.twitter_username ? <><TwitterLogo size={24} /> {user.twitter_username}</> : 'not available'}</li>
-          <li>{user.html_url ? <><Link size={24}/> {user.html_url}</> : 'not available'}</li>
-          <li>{user.company ? <><Buildings size={24} /> @ {user.company}</> : 'not available'}</li>
+          <li>
+            <MapPin size={24}/>
+            {user.location ? user.location : "not available"}
+          </li>
+          <li>
+            <TwitterLogo size={24} />
+            {user.twitter_username ? user.twitter_username : "not available"}
+          </li>
+          <li>
+            <Link size={24}/>
+            {user.html_url ? <a href={user.html_url} target="_blank">{user.html_url}</a> : "not available"}
+          </li>
+          <li>
+            <Buildings size={24} />
+            {user.company ?  "@" + user.company : "not available"}
+          </li>
         </ul>
       </footer>
     </div>

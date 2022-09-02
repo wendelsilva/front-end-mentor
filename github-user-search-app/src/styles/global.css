@@ -1,0 +1,25 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background-dark-color: #141C2F;
+    --text-dark-color: #F6F8F9;
+    --primary-dark-color: #1F2A48;
+    --secondary-dark-color: #0079FE;
+    --shadow-dark-color: #101B2F;
+}
+
+body, input, button {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    background-color: var(--background-dark-color);
+    color: var(--text-dark-color);
+}
+
+li, a {
+    list-style: none;
+    text-decoration: none;
+}

@@ -1,0 +1,78 @@
+.user-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    background-color: var(--primary-dark-color);
+    border-radius: .8rem;
+    padding: 2rem;
+}
+
+.user-card header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 3rem;
+}
+
+.user-card header img {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 100%;
+}
+
+.user-card header ul .name {
+    font-size: 2rem;
+}
+
+.user-card header ul .user {
+    font-size: .75rem;
+    color: var(--secondary-dark-color);
+}
+
+.user-card header ul .started {
+    font-weight: 300;
+}
+
+.user-card p {
+    font-weight: 300;
+    text-align: justify;
+    padding-right: 1rem;
+}
+
+.user-card table {
+    width: 100%;
+    text-align: left;
+    background-color: var(--background-dark-color);
+    border-radius: .6rem;
+    padding: .5rem 2rem;
+}
+
+.user-card table thead th {
+    font-weight: 300;
+    font-size: .8rem;
+}
+
+.user-card table tbody td {
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.user-card footer {
+    width: 100%;
+}
+
+.user-card footer ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: .75rem;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.user-card footer ul li {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}

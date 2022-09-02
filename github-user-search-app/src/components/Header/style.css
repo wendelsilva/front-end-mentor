@@ -1,0 +1,17 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+h1 {
+    font-size: 1.2rem;
+}
+
+header button {
+    font-size: .75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: none;
+}

@@ -26,7 +26,7 @@ npm run dev
 
 O projeto não está totalmente concluído pois ainda irei adicionar funcionalidades como tema dark e light, algumas telas de carregamento para melhorar a experiência do usuário entre outras coisas.
 ### Funcionalides a serem adicionadas
-- [ ] Telas de Carregamento
+- [X] Telas de Carregamento
 - [ ] Tratativas de Erros
 - [ ] Tema Light
 - [ ] Acessibilidade(Realizar pesquisa utilizando os botões do teclado como 'Enter' e 'Esc')

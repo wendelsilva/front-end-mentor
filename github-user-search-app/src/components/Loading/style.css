@@ -1,0 +1,14 @@
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loader {
+    border: 1rem solid var(--primary-dark-color);
+    border-top: 1rem solid var(--secondary-dark-color);
+    border-radius: 50%;
+    width: 7.5rem;
+    height: 7.5rem;
+    margin-top: 5rem;
+    animation: spin 2s linear infinite;
+}

@@ -1,6 +1,6 @@
 import { Sun } from 'phosphor-react';
 
-import './style.css'
+import './style.css';
 
 export function Header() {
   return (

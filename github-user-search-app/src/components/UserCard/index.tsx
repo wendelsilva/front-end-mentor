@@ -1,16 +1,15 @@
-import { UserCardProps } from './types';
-
-import './style.css'
 import { Buildings, Link, MapPin, TwitterLogo } from 'phosphor-react';
 
-export function UserCard({ user }: UserCardProps) {
+import { UserProps } from './types';
+import { convertDateToPtBrFormat } from '../../utils/convertDateToPtBrFormat';
 
-    const splitDate = user.created_at.toString().split('T')[0];
-    const day = splitDate.split('-')[2]
-    const month = splitDate.split('-')[1];
-    const year = splitDate.split('-')[0];
-    const dateFormated = day + '/' + month + '/' + year;
-  
+import './style.css';
+
+interface UserCardProps {
+  user: UserProps;
+}
+
+export function UserCard({ user }: UserCardProps) {
 
   return (
     <div className="user-card">
@@ -19,7 +18,7 @@ export function UserCard({ user }: UserCardProps) {
         <ul>
           <li className="name">{user.name}</li>
           <li className="user">@{user.login}</li>
-          <li className="started">Joined {dateFormated}</li>
+          <li className="started">Joined {convertDateToPtBrFormat(user.created_at)}</li>
         </ul>
       </header>
       <p>{user.bio ? user.bio : "this profile has no bio"}</p>

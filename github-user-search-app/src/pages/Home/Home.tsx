@@ -1,26 +1,27 @@
 import { useState } from 'react';
-
-import { MagnifyingGlass } from 'phosphor-react'
+import { MagnifyingGlass } from 'phosphor-react';
 
 import { Header } from '../../components/Header';
 import { UserCard } from '../../components/UserCard';
+import { Loading } from '../../components/Loading';
 import { api } from '../../lib/api';
+import { UserProps } from '../../components/UserCard/types';
 
-import './style.css'
+import './style.css';
 
 export function Home() {
   const [userName, setUserName] = useState('')
-  const [haveData, setHaveData] = useState(false)
-  const [userData, setUserData] = useState({})
+  const [user, setUser] = useState<UserProps>()
+  const [isLoading, setIsLoading] = useState(false)
   
-  async function getUser(name: string) {
+   async function getUser(name: string) {
     try {
-      const response = await api.get('https://api.github.com/users/' + name);
-      const data = response.data
-      setUserData(data);
-      setHaveData(true);
-    } catch {
-      alert('Error: usuário não encontrado');
+      setIsLoading(true)
+      const response = await api.get('/users/' + name)
+      setUser(response.data)
+      setIsLoading(false)
+    } catch (error) {
+      alert(error)
     }
   }
 
@@ -41,7 +42,8 @@ export function Home() {
           Search
         </button>
       </div>
-      {haveData ? <UserCard user={userData} /> : '' }
+      {isLoading ? <Loading /> : ''}
+      {user ? <UserCard user={user} /> : ''}
     </div>
   )
 }
